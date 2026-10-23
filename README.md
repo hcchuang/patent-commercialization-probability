@@ -19,8 +19,6 @@ See the [data dictionary](DATA_DICTIONARY.md), [manifest](release_manifest.json)
 
 Select `in_paper_sample` for the paper's 7,980,202 patents with recorded application years 1981-2024. The remaining 446,750 scored patents are outside that window.
 
-Application year is copied as recorded. Source years range from 1682 to 2025 and include anomalous historical values; 108 source records have an application date after the grant date. No dates are corrected. The paper flag filters years only.
-
 Predictions use separate Random Forest models for each outcome and CPC section, with PaECTER title-and-abstract embeddings. Seven model sections are A, B, C, F, G, H, and modified Y; D and E use Y. These are raw probabilities without isotonic calibration. Original float32 values are preserved; CSV uses 17 significant digits after exact promotion to float64.
 
 Commercialization means in-house use or licensing, including both. These outcomes overlap, and separately estimated probabilities need not sum to one or satisfy joint-probability constraints. A predicted component can exceed predicted commercialization. The release contains predictions, not observed survey responses, patent text, embeddings, or fitted models.
