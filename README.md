@@ -19,7 +19,7 @@ See the [data dictionary](DATA_DICTIONARY.md), [manifest](release_manifest.json)
 
 Select `in_paper_sample` for the paper's 7,980,202 patents with recorded application years 1981-2024. The remaining 446,750 scored patents are outside that window.
 
-Predictions use separate Random Forest models for each outcome and CPC section, with PaECTER title-and-abstract embeddings. Seven model sections are A, B, C, F, G, H, and modified Y; D and E use Y. These are raw probabilities without isotonic calibration.
+Predictions use separate Random Forest models for each outcome and CPC section, with PaECTER title-and-abstract embeddings. Seven model sections are A, B, C, F, G, H, and modified Y; D and E use Y. 
 
 Commercialization means in-house use or licensing, including both. These outcomes overlap, and separately estimated probabilities need not sum to one or satisfy joint-probability constraints. A predicted component can exceed predicted commercialization. The release contains predictions, not observed survey responses, patent text, embeddings, or fitted models.
 
