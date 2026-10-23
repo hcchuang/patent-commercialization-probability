@@ -33,12 +33,55 @@ p = pd.read_parquet("patent_commercialization_probabilities.parquet", engine="py
 paper = p.loc[p["in_paper_sample"]]
 ```
 
-For compressed CSV, retain string IDs:
+For compressed CSV, the following reproduces the full-population, section-by-section “All” rows in Tables 6, A2, and A3 using the original float32 summary calculation.
+
+Tested with pandas 2.2.3, NumPy 2.3.5, and Bottleneck 1.4.2. Bottleneck must be installed; pandas uses it automatically without an explicit import. This reproduces the original numerical calculation; double-precision summaries (including Stata) give different standard deviations.
 
 ```python
-p = pd.read_csv("patent_commercialization_probabilities.csv.gz",
-                dtype={"patent_id": "string"}, float_precision="round_trip")
+import pandas as pd
+
+prob_cols = [
+    "prob_commercialization",
+    "prob_inhouse",
+    "prob_licensing",
+]
+
+p = pd.read_csv(
+    "patent_commercialization_probabilities.csv.gz",
+    dtype={"patent_id": "string", **{c: "float32" for c in prob_cols}},
+    float_precision="round_trip",
+)
 paper = p.loc[p["in_paper_sample"].eq(1)]
+
+# Reproduce the original pandas float32 summary calculation.
+pd.set_option("compute.use_bottleneck", True)
+
+summary = pd.DataFrame({
+    "Count": paper[prob_cols].count(),
+    "Mean": paper[prob_cols].mean(),
+    "Std. Dev.": paper[prob_cols].std(),
+    "Min": paper[prob_cols].min(),
+    "Pct25": paper[prob_cols].quantile(0.25),
+    "Median": paper[prob_cols].median(),
+    "Pct75": paper[prob_cols].quantile(0.75),
+    "Max": paper[prob_cols].max(),
+})
+
+formatted = summary.copy()
+formatted["Count"] = summary["Count"].map("{:,}".format)
+for col in summary.columns.drop("Count"):
+    formatted[col] = summary[col].map(lambda x: f"{100 * x:.2f}%")
+
+print(formatted.to_string())
+```
+
+Expected output:
+
+```text
+                            Count    Mean Std. Dev.    Min   Pct25  Median   Pct75      Max
+prob_commercialization  7,980,202  63.65%    10.38%  0.00%  58.40%  64.60%  70.40%  100.00%
+prob_inhouse            7,980,202  57.67%    11.58%  0.00%  51.90%  58.60%  65.10%  100.00%
+prob_licensing          7,980,202  15.71%     7.48%  0.00%  10.20%  14.70%  20.10%  100.00%
 ```
 
 Merge another table using the same string grant IDs:
