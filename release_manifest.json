@@ -1,0 +1,76 @@
+{
+  "version": "v1",
+  "prepared_utc": "2026-10-23T09:22:55.309708+00:00",
+  "repository": "https://github.com/hcchuang/patent-commercialization-probability",
+  "paper": "What Share of Patents Is Commercialized?",
+  "manuscript": "RESPOL-D-25-02346R1",
+  "population": "Saved scored US utility patents; not every row is a held-out prediction",
+  "rows": 8426952,
+  "paper_sample_rows": 7980202,
+  "paper_sample_rule": "application_year >= 1981 and application_year <= 2024, within this scored universe",
+  "source_file": "patent_title_abstract_pv20250930_cpc_renew_kpss_govinst_tri_vpm_prob_section.parquet",
+  "source_sha256": "d79f43fe52ab205ad09178c14f15dbd0ac20a77ee9008ded4245922a629b4f32",
+  "probability_columns": {
+    "prob_commercialization": "p_use_strict__abstract__RF__paecter",
+    "prob_inhouse": "p_inhouse__abstract__RF__paecter",
+    "prob_licensing": "p_license__abstract__RF__paecter"
+  },
+  "schema": {
+    "patent_id": "string",
+    "application_year": "int32",
+    "in_paper_sample": "bool",
+    "prob_commercialization": "float",
+    "prob_inhouse": "float",
+    "prob_licensing": "float"
+  },
+  "csv_encoding": {
+    "encoding": "UTF-8",
+    "delimiter": ",",
+    "in_paper_sample": "1 or 0",
+    "probabilities": "17 significant digits of the exact source float32 values promoted to float64"
+  },
+  "sample_selection": "1000 evenly spaced rows in numeric patent-ID order; preview only",
+  "model": "Saved CPC-section-specific random forests using PaECTER title-and-abstract embeddings",
+  "probability_transformation": "None; original float32 values retained",
+  "source_files_modified": false,
+  "models_fitted": false,
+  "verification": {
+    "parquet_exact": true,
+    "csv_exact_after_float64_round_trip": true,
+    "source_hash_unchanged": true
+  },
+  "means_full": {
+    "prob_commercialization": 0.6353261648014238,
+    "prob_inhouse": 0.5765586908712222,
+    "prob_licensing": 0.1582371053723835
+  },
+  "means_paper_sample": {
+    "prob_commercialization": 0.6365106735544511,
+    "prob_inhouse": 0.5767027126834042,
+    "prob_licensing": 0.15705905760144348
+  },
+  "application_year_note": "Application year is copied as recorded. Source years range from 1682 to 2025; the source also contains 108 application-after-grant cases. No date corrections are applied. The paper flag filters years only.",
+  "environment": {
+    "python": "3.11.15",
+    "pandas": "3.0.2",
+    "numpy": "2.4.4",
+    "pyarrow": "21.0.0"
+  },
+  "assets": [
+    {
+      "file": "patent_commercialization_probabilities.parquet",
+      "bytes": 37253054,
+      "sha256": "e69244041be155bff755a1f82832d3fce78838a8d6f0dca6139a57fef23315b1"
+    },
+    {
+      "file": "patent_commercialization_probabilities.csv.gz",
+      "bytes": 102804038,
+      "sha256": "7b02ebc59c3147cb280790342af445c5fd5e546129c874b98a629af89d1969e9"
+    },
+    {
+      "file": "sample_patent_commercialization_probabilities.csv",
+      "bytes": 74876,
+      "sha256": "206e7f0a92359146bb23402650198a86aac6c318de28e0648d4dd11129094573"
+    }
+  ]
+}

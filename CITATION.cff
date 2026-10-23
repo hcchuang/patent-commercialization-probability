@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+type: dataset
+message: If you use these data, please cite both the dataset version and the manuscript
+  below.
+title: Patent commercialization probabilities
+authors:
+- family-names: Chuang
+  given-names: Hui-Ching
+- family-names: Hsu
+  given-names: Po-Hsuan
+- family-names: Lee
+  given-names: You-Na
+- family-names: Walsh
+  given-names: John P.
+version: v1
+url: https://github.com/hcchuang/patent-commercialization-probability
+abstract: Patent-level predicted probabilities of overall commercialization, in-house
+  use, and licensing from CPC-section-specific Random Forest models using PaECTER
+  title-and-abstract embeddings. Includes all 8,426,952 scored patents and a flag
+  for the 7,980,202 observations with recorded application years 1981 through 2024.
+  Predictions accompany the R1 manuscript What Share of Patents Is Commercialized?
+preferred-citation:
+  type: unpublished
+  title: What Share of Patents Is Commercialized?
+  authors:
+  - family-names: Chuang
+    given-names: Hui-Ching
+  - family-names: Hsu
+    given-names: Po-Hsuan
+  - family-names: Lee
+    given-names: You-Na
+  - family-names: Walsh
+    given-names: John P.
+license: CC-BY-4.0
+date-released: 2026-10-23

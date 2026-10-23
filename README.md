@@ -1,6 +1,6 @@
 # Patent commercialization probabilities
 
-Data accompanying **What Share of Patents Is Commercialized?** by Hui-Ching Chuang, Po-Hsuan Hsu, You-Na Lee, and John P. Walsh (2026).
+Data accompanying **What Share of Patents Is Commercialized?** by Hui-Ching Chuang, Po-Hsuan Hsu, You-Na Lee, and John P. Walsh.
 
 Each row provides a U.S. patent grant ID, recorded application year, paper-sample flag, and predicted probabilities of commercialization, in-house use, and licensing.
 
@@ -72,7 +72,7 @@ For another dataset with string grant IDs, use `merge m:1 patent_id using "paten
 
 Please cite the manuscript and dataset version:
 
-Chuang, Hui-Ching, Po-Hsuan Hsu, You-Na Lee, and John P. Walsh. 2026. *What Share of Patents Is Commercialized?* Working paper.
+Chuang, Hui-Ching, Po-Hsuan Hsu, You-Na Lee, and John P. Walsh. *What Share of Patents Is Commercialized?*.
 
 The same authors. 2026. *Patent commercialization probabilities*. Version v1. [Repository](https://github.com/hcchuang/patent-commercialization-probability). See [CITATION.cff](CITATION.cff) for metadata.
 
