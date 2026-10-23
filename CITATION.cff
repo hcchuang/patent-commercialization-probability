@@ -1,7 +1,6 @@
 cff-version: 1.2.0
 type: dataset
-message: If you use these data, please cite both the dataset version and the manuscript
-  below.
+message: If you use these data, please cite the paper below.
 title: Patent commercialization probabilities
 authors:
 - family-names: Chuang
