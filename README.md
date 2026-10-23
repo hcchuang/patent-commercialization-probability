@@ -19,7 +19,7 @@ See the [data dictionary](DATA_DICTIONARY.md), [manifest](release_manifest.json)
 
 Select `in_paper_sample` for the paper's 7,980,202 patents with recorded application years 1981-2024. The remaining 446,750 scored patents are outside that window.
 
-Predictions use separate Random Forest models for each outcome and CPC section, with PaECTER title-and-abstract embeddings. Seven model sections are A, B, C, F, G, H, and modified Y; D and E use Y. These are raw probabilities without isotonic calibration. Original float32 values are preserved; CSV uses 17 significant digits after exact promotion to float64.
+Predictions use separate Random Forest models for each outcome and CPC section, with PaECTER title-and-abstract embeddings. Seven model sections are A, B, C, F, G, H, and modified Y; D and E use Y. These are raw probabilities without isotonic calibration.
 
 Commercialization means in-house use or licensing, including both. These outcomes overlap, and separately estimated probabilities need not sum to one or satisfy joint-probability constraints. A predicted component can exceed predicted commercialization. The release contains predictions, not observed survey responses, patent text, embeddings, or fitted models.
 
@@ -68,11 +68,9 @@ For another dataset with string grant IDs, use `merge m:1 patent_id using "paten
 
 ## Cite the paper
 
-Please cite the manuscript and dataset version:
+Please cite our paper:
 
 Chuang, Hui-Ching, Po-Hsuan Hsu, You-Na Lee, and John P. Walsh. *What Share of Patents Is Commercialized?*.
-
-The same authors. 2026. *Patent commercialization probabilities*. Version v1. [Repository](https://github.com/hcchuang/patent-commercialization-probability). See [CITATION.cff](CITATION.cff) for metadata.
 
 ## License
 
