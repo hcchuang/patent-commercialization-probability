@@ -50,7 +50,6 @@ joined = other.merge(p, on="patent_id", how="left",
 print(joined["_merge"].value_counts())
 ```
 
-Application numbers and patent-family IDs are different keys. See pandas [CSV documentation](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html).
 
 ## Stata
 
