@@ -27,17 +27,19 @@
     "encoding": "UTF-8",
     "delimiter": ",",
     "in_paper_sample": "1 or 0",
-    "probabilities": "17 significant digits of the exact source float32 values promoted to float64"
+    "probabilities": "Fixed seven decimal places, rounded for readability at user request"
   },
   "sample_selection": "1000 evenly spaced rows in numeric patent-ID order; preview only",
   "model": "Saved CPC-section-specific random forests using PaECTER title-and-abstract embeddings",
-  "probability_transformation": "None; original float32 values retained",
+  "probability_transformation": "No model re-estimation; Parquet retains original float32 values; CSV probabilities rounded to seven decimal places",
   "source_files_modified": false,
   "models_fitted": false,
   "verification": {
     "parquet_exact": true,
-    "csv_exact_after_float64_round_trip": true,
-    "source_hash_unchanged": true
+    "source_hash_unchanged": true,
+    "csv_rows_and_identifiers_exact": true,
+    "csv_probability_max_absolute_rounding_error": 2.95639037695139e-08,
+    "csv_decimal_places": 7
   },
   "means_full": {
     "prob_commercialization": 0.6353261648014238,
@@ -64,13 +66,13 @@
     },
     {
       "file": "patent_commercialization_probabilities.csv.gz",
-      "bytes": 102804038,
-      "sha256": "7b02ebc59c3147cb280790342af445c5fd5e546129c874b98a629af89d1969e9"
+      "bytes": 76699440,
+      "sha256": "7318e8eec92d109258fa51407accbdfb83b7dc02e5dea3b3be57eb72e35107da"
     },
     {
       "file": "sample_patent_commercialization_probabilities.csv",
-      "bytes": 74876,
-      "sha256": "206e7f0a92359146bb23402650198a86aac6c318de28e0648d4dd11129094573"
+      "bytes": 45379,
+      "sha256": "326cbebf5830222b8987184eb03ca0cdb7188c9273c8696255dc428d7bbe0394"
     }
   ]
 }

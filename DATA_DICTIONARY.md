@@ -1,6 +1,6 @@
 # Data dictionary for patent commercialization probabilities
 
-Release `v1` contains 8,426,952 rows, one per scored U.S. utility patent. Export verification confirms that Parquet and CSV preserve the source probabilities exactly. The source file was unchanged.
+Release `v1` contains 8,426,952 rows, one per scored U.S. utility patent. Parquet retains the saved source probabilities. CSV displays probabilities to seven decimal places. The source file was unchanged.
 
 ## Fields
 
@@ -31,7 +31,7 @@ Each master field matches the `p_raw` field in its corresponding `{label}__abstr
 
 The section scorer uses the positive-class output from the final Random Forest models, with separate models for CPC sections A, B, C, F, G, H, and modified Y. Original sections D and E use the Y model. Inputs are 1,024-dimensional PaECTER embeddings of title-and-abstract text. The scorer applies no isotonic calibration. The values in this release are section-specific predictions, not pooled-model predictions.
 
-Parquet preserves the original float32 probability values. CSV writes 17 significant digits after exact promotion to float64. Reading those decimal values and converting to float32 recovers the original source values. No new statistical precision is introduced by the longer decimal representation.
+Parquet preserves the original float32 probability values. CSV probabilities are rounded to seven decimal places for readability; the maximum absolute rounding error is at most 0.00000005. Patent identifiers, application years, and sample flags are unchanged.
 
 ## Coverage and recorded years
 
@@ -61,7 +61,7 @@ Do not treat the columns as a three-category probability distribution or mechani
 | Mean `prob_inhouse`, paper window | 0.5767027126834042 |
 | Mean `prob_licensing`, paper window | 0.15705905760144348 |
 
-The reference means use the saved source values with double-precision aggregation. Minor displayed differences can result from using a float32 accumulator. The [release manifest](release_manifest.json) records exact Parquet and CSV verification, source provenance, environment versions, and file hashes. The [checksum file](SHA256SUMS.txt) also covers the manifest. Source verification was completed on 23 October 2026.
+The reference means use the saved source values with double-precision aggregation. Minor displayed differences can result from using a float32 accumulator. The [release manifest](release_manifest.json) records exact Parquet verification and CSV rounding checks, source provenance, environment versions, and file hashes. The [checksum file](SHA256SUMS.txt) also covers the manifest. Source verification was completed on 23 October 2026.
 
 ## Preview
 

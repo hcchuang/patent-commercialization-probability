@@ -11,7 +11,7 @@ Version: [v1](https://github.com/hcchuang/patent-commercialization-probability/r
 | File | Size |
 | --- | ---: |
 | [patent_commercialization_probabilities.parquet](https://github.com/hcchuang/patent-commercialization-probability/releases/download/v1/patent_commercialization_probabilities.parquet) | 37,253,054 bytes |
-| [patent_commercialization_probabilities.csv.gz](https://github.com/hcchuang/patent-commercialization-probability/releases/download/v1/patent_commercialization_probabilities.csv.gz) | 102,804,038 bytes |
+| [patent_commercialization_probabilities.csv.gz](https://github.com/hcchuang/patent-commercialization-probability/releases/download/v1/patent_commercialization_probabilities.csv.gz) | 76,699,440 bytes |
 
 See the [data dictionary](DATA_DICTIONARY.md), [manifest](release_manifest.json), and [SHA-256 checksums](SHA256SUMS.txt). The [1,000-row preview](sample_patent_commercialization_probabilities.csv) selects evenly spaced rows in numeric patent-ID order; it is not a random sample.
 
@@ -33,7 +33,7 @@ p = pd.read_parquet("patent_commercialization_probabilities.parquet", engine="py
 paper = p.loc[p["in_paper_sample"]]
 ```
 
-For compressed CSV, retain string IDs and exact decimal values:
+For compressed CSV, retain string IDs:
 
 ```python
 p = pd.read_csv("patent_commercialization_probabilities.csv.gz",
