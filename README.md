@@ -64,7 +64,7 @@ save "patent_commercialization_probabilities.dta"
 * Optional paper window: keep if in_paper_sample == 1
 ```
 
-For another dataset with string grant IDs, use `merge m:1 patent_id using "patent_commercialization_probabilities.dta"` and inspect `_merge`. Use `1:1` when both tables have unique patent IDs. See Stata's [import documentation](https://www.stata.com/manuals/dimportdelimited.pdf).
+For another dataset with string grant IDs, use `merge m:1 patent_id using "patent_commercialization_probabilities.dta"` and inspect `_merge`. Use `1:1` when both tables have unique patent IDs. 
 
 ## Cite the paper
 
