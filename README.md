@@ -17,7 +17,7 @@ See the [data dictionary](DATA_DICTIONARY.md), [manifest](release_manifest.json)
 
 ## Coverage and interpretation
 
-Select `in_paper_sample` for the paper's 7,980,202 patents with recorded application years 1981-2024. The remaining 446,750 scored patents are outside that window. The flag does not identify triadic patents, training membership, or restricted validation samples. Training patents remain in the dataset.
+Select `in_paper_sample` for the paper's 7,980,202 patents with recorded application years 1981-2024. The remaining 446,750 scored patents are outside that window.
 
 Application year is copied as recorded. Source years range from 1682 to 2025 and include anomalous historical values; 108 source records have an application date after the grant date. No dates are corrected. The paper flag filters years only.
 
