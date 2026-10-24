@@ -114,6 +114,10 @@ Please cite our paper:
 
 Chuang, Hui-Ching, Po-Hsuan Hsu, You-Na Lee, and John P. Walsh. *What Share of Patents Is Commercialized?*.
 
+## Contact
+
+Please contact Hui-Ching Chuang ([huichingc@gmail.com](mailto:huichingc@gmail.com)) or John P. Walsh ([johnpyne.walsh@polimi.it](mailto:johnpyne.walsh@polimi.it)) if you have questions about the data.
+
 ## License
 
 Data and documentation are licensed under [CC BY 4.0](LICENSE.md).
