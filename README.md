@@ -35,7 +35,7 @@ paper = p.loc[p["in_paper_sample"]]
 
 For compressed CSV, the following reproduces the full-population, section-by-section “All” rows in Tables 6, A2, and A3 using the original float32 summary calculation.
 
-Tested with pandas 2.2.3, NumPy 2.3.5, and Bottleneck 1.4.2. Bottleneck must be installed; pandas uses it automatically without an explicit import. This reproduces the original numerical calculation; double-precision summaries (including Stata) give different standard deviations.
+Tested with pandas 2.2.3, NumPy 2.3.5, and Bottleneck 1.4.2. Bottleneck must be installed; pandas uses it automatically without an explicit import. This reproduces the original numerical calculation; double-precision summaries (including Stata) may give slightly different standard deviations.
 
 ```python
 import pandas as pd
