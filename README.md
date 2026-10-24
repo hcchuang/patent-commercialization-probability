@@ -4,6 +4,10 @@ Data accompanying **What Share of Patents Is Commercialized?** by Hui-Ching Chua
 
 Each row provides a U.S. patent grant ID, recorded application year, paper-sample flag, and predicted probabilities of commercialization, in-house use, and licensing.
 
+## Contact
+
+Please contact Hui-Ching Chuang ([huichingc@gmail.com](mailto:huichingc@gmail.com)) or John P. Walsh ([johnpyne.walsh@polimi.it](mailto:johnpyne.walsh@polimi.it)) if you have questions about the data.
+
 ## Download
 
 Version: [v1](https://github.com/hcchuang/patent-commercialization-probability/releases/tag/v1). Download either format; both contain the same 8,426,952 observations.
@@ -114,9 +118,6 @@ Please cite our paper:
 
 Chuang, Hui-Ching, Po-Hsuan Hsu, You-Na Lee, and John P. Walsh. *What Share of Patents Is Commercialized?*.
 
-## Contact
-
-Please contact Hui-Ching Chuang ([huichingc@gmail.com](mailto:huichingc@gmail.com)) or John P. Walsh ([johnpyne.walsh@polimi.it](mailto:johnpyne.walsh@polimi.it)) if you have questions about the data.
 
 ## License
 
